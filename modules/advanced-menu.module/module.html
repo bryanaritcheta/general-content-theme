@@ -1,0 +1,14 @@
+{% set menu_id = module.advanced_menu || module.menu %}
+<div class="footer-menu-name">
+  {% text value="{{module.menu_name}}" %}
+</div>
+<div class="footer-menu-information">
+  {% text value="{{module.menu_information}}" %}
+</div>
+{% menu 
+	id="{{ menu_id }}",
+  root_type="{{ module.root_type }}", 
+  flyouts="{{ module.flyouts }}", 
+  max_levels="{{ module.max_levels }}", 
+  flow="{{ module.flow }}"
+%}

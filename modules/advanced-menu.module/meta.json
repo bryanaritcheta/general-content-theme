@@ -1,0 +1,20 @@
+{
+  "content_tags" : [ {
+    "name" : "NONPROFIT",
+    "source" : "MARKETPLACE"
+  }, {
+    "name" : "COMPATIBLE_BLOG",
+    "source" : "MARKETPLACE"
+  }, {
+    "name" : "COMPATIBLE_PAGE",
+    "source" : "MARKETPLACE"
+  } ],
+  "extra_classes" : "widget-type-menu",
+  "global" : false,
+  "master_language" : "en",
+  "icon" : "../../../mV0_hubspot/img/icon/edited-menu.svg",
+  "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
+  "module_id" : 70952748567,
+  "label" : "Advanced Menu",
+  "is_available_for_new_content" : true
+}
