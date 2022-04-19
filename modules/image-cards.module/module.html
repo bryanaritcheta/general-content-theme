@@ -32,9 +32,9 @@
 {# Image card #}
 <div class="image-cards">
   {% for image_card in module.image_card %}
-    <section class="card card--item image-card">
-      <div class="card--content">
-        <div class="card--image">
+    <section class="card card--item image-card lg:py-4 md:py-2">
+      <div class="card--content md:flex items-center justify-between md:pb-0 pb-8">
+        <div class="card--image md:pb-0 pb-4">
           {% if image_card.image.src %}
           {% set sizeAttrs = 'width="{{ image_card.image.width }}" height="{{ image_card.image.height }}"' %}
           {% if image_card.image.size_type == "auto" %}
