@@ -1,23 +1,44 @@
 [ {
-  "id" : "tier",
-  "name" : "tier",
+  "id" : "b629540f-258b-ad4e-356a-7840d0234a6b",
+  "name" : "card",
   "display_width" : null,
-  "label" : "Product tier",
+  "label" : "Card",
   "required" : false,
   "locked" : false,
-  "enabled_features" : [ "font_size", "standard_emphasis", "block", "font_family", "alignment" ],
-  "type" : "richtext",
-  "default" : "<h2>Free</h2>"
-}, {
-  "id" : "description",
-  "name" : "description",
-  "display_width" : null,
-  "label" : "Product description",
-  "required" : false,
-  "locked" : false,
-  "enabled_features" : [ "font_size", "standard_emphasis", "block", "font_family", "alignment" ],
-  "type" : "richtext",
-  "default" : "<p>For teams that need additional security, control, and support.</p>"
+  "occurrence" : {
+    "min" : null,
+    "max" : 3,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "tier",
+    "name" : "heading",
+    "display_width" : null,
+    "label" : "Heading",
+    "required" : false,
+    "locked" : false,
+    "enabled_features" : [ "font_size", "standard_emphasis", "block", "font_family", "alignment" ],
+    "type" : "richtext",
+    "default" : "<h2>Free</h2>"
+  }, {
+    "id" : "description",
+    "name" : "content",
+    "display_width" : null,
+    "label" : "Content",
+    "required" : false,
+    "locked" : false,
+    "enabled_features" : [ "font_size", "standard_emphasis", "block", "font_family", "alignment" ],
+    "type" : "richtext",
+    "default" : "<p>For teams that need additional security, control, and support.</p>"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "heading" : "<h2>Free</h2>",
+    "content" : "<p>For teams that need additional security, control, and support.</p>"
+  }
 }, {
   "id" : "styles",
   "name" : "styles",
@@ -108,7 +129,20 @@
       } ],
       "tab" : "STYLE",
       "expanded" : false,
-      "type" : "group"
+      "type" : "group",
+      "default" : {
+        "background_type" : "none",
+        "color" : {
+          "color" : null,
+          "opacity" : null
+        },
+        "gradient" : { },
+        "image" : {
+          "src" : "",
+          "background_position" : "MIDDLE_CENTER",
+          "background_size" : "cover"
+        }
+      }
     }, {
       "id" : "styles.card.border",
       "name" : "border",
@@ -129,7 +163,10 @@
       } ],
       "tab" : "STYLE",
       "expanded" : false,
-      "type" : "group"
+      "type" : "group",
+      "default" : {
+        "border" : { }
+      }
     }, {
       "id" : "styles.card.corner",
       "name" : "corner",
@@ -152,7 +189,8 @@
       } ],
       "tab" : "STYLE",
       "expanded" : false,
-      "type" : "group"
+      "type" : "group",
+      "default" : { }
     }, {
       "id" : "styles.card.spacing",
       "name" : "spacing",
@@ -172,13 +210,62 @@
       } ],
       "tab" : "STYLE",
       "expanded" : false,
-      "type" : "group"
+      "type" : "group",
+      "default" : {
+        "spacing" : { }
+      }
     } ],
     "tab" : "STYLE",
     "expanded" : false,
-    "type" : "group"
+    "type" : "group",
+    "default" : {
+      "background" : {
+        "background_type" : "none",
+        "color" : {
+          "color" : null,
+          "opacity" : null
+        },
+        "gradient" : { },
+        "image" : {
+          "src" : "",
+          "background_position" : "MIDDLE_CENTER",
+          "background_size" : "cover"
+        }
+      },
+      "border" : {
+        "border" : { }
+      },
+      "corner" : { },
+      "spacing" : {
+        "spacing" : { }
+      }
+    }
   } ],
   "tab" : "STYLE",
   "expanded" : false,
-  "type" : "group"
+  "type" : "group",
+  "default" : {
+    "card" : {
+      "background" : {
+        "background_type" : "none",
+        "color" : {
+          "color" : null,
+          "opacity" : null
+        },
+        "gradient" : { },
+        "image" : {
+          "src" : "",
+          "background_position" : "MIDDLE_CENTER",
+          "background_size" : "cover"
+        }
+      },
+      "border" : {
+        "border" : { }
+      },
+      "corner" : { },
+      "spacing" : {
+        "spacing" : { }
+      }
+    }
+  }
 } ]
