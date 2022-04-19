@@ -1,0 +1,31 @@
+.dnd-row:not(:last-child) {
+  padding-bottom: 1.5rem;
+}
+
+.image-cards .image-card:nth-child(even) .card--content {
+  flex-direction: row-reverse;
+}
+
+.image-card .card--content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.image-card .card--image,
+.image-card .card--text {
+  width: 49%;
+}
+
+
+@media screen and (max-width: 1200px) {
+  .card--item {
+    padding: 2.1rem 0.7rem;
+  }
+}
+
+@media screen and (max-width: 787px) {
+  .card--item {
+    margin-bottom: 1.4rem;
+  }
+}

@@ -1,0 +1,65 @@
+{# Module styles #}
+
+{% require_css %}
+
+  <style>
+    {% scope_css %}
+
+      {# Card #}
+
+      .card {
+        {% if module.styles.card.background.background_type == "color" && module.styles.card.background.color.color %}
+          background-color: rgba({{ module.styles.card.background.color.color|convert_rgb }}, {{ module.styles.card.background.color.opacity / 100 }});
+        {% elif module.styles.card.background.background_type == "gradient" %}
+          background: {{ module.styles.card.background.gradient.css }};
+        {% elif module.styles.card.background.background_type == "image" %}
+          {{ module.styles.card.background.image.css }}
+        {% endif %}
+        {{ module.styles.card.border.border.css }}
+        {% if module.styles.card.corner.radius >= 0 %}
+          border-radius: {{ module.styles.card.corner.radius ~ "px" }};
+        {% endif %}
+        {{ module.styles.card.spacing.spacing.css }}
+      }
+
+      {# /Card #}
+
+    {% end_scope_css %}
+  </style>
+
+{% end_require_css %}
+
+{# Image card #}
+<div class="image-cards">
+  {% for image_card in module.image_card %}
+    <section class="card card--item image-card">
+      <div class="card--content">
+        <div class="card--image">
+          {% if image_card.image.src %}
+          {% set sizeAttrs = 'width="{{ image_card.image.width }}" height="{{ image_card.image.height }}"' %}
+          {% if image_card.image.size_type == "auto" %}
+          {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+          {% elif image_card.image.size_type == "auto_custom_max" %}
+          {% set sizeAttrs = 'width="{{ image_card.image.max_width }}" height="{{ image_card.image.max_height }}" style="max-width: 100%; max-height: auto;"' %}
+          {% endif %}
+          {% set loadingAttr = image_card.image.loading != "disabled" ? 'loading="{{ image_card.image.loading }}"' : "" %}
+          <img class="card__image" src="{{ image_card.image.src }}" alt="{{ image_card.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+          {% endif %}
+        </div>
+        <div class="card--text">
+          {% if image_card.heading %}
+          <div class="card--heading pb-2">
+            {{ image_card.heading }}
+          </div>
+          {% endif %}
+          {% if image_card.content %}
+          <div class="card--text">
+            {{ image_card.content }}
+          </div>
+        </div>
+      </div>
+      {% endif %}
+    </section>
+  {% endfor %}
+</div>
+{# /Image card #}
