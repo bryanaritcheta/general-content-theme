@@ -3,6 +3,6 @@
   "icon" : "../../images/module-icons/table.svg",
   "host_template_types" : [ "PAGE" ],
   "module_id" : 71370798954,
-  "label" : "Image card",
+  "label" : "Image cards",
   "is_available_for_new_content" : true
 }
