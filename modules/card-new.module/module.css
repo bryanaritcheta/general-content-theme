@@ -1,3 +1,12 @@
 .dnd-row:not(:last-child) {
   padding-bottom: 1.5rem;
 }
+
+@media only screen and (min-width: 768px) {
+  .cards.cards-new {
+    display: grid;
+    gap: 1em;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+}
