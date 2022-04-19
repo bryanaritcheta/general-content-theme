@@ -31,21 +31,25 @@
 
 {# Pricing card #}
 
-<section class="card card--item lg:py-4 md:py-2">
-  {% if module.tier and module.description %}
-    <div class="card--content">
-      {% if module.tier %}
-      <div class="card--heading pb-2">
-        {{ module.tier }}
+<div class="cards cards-new">
+  {% for card in module.card %}
+    <section class="card card--item lg:py-4 md:py-2">
+      {% if card.heading and card.content %}
+      <div class="card--content md:pb-0 pb-8">
+        {% if card.heading %}
+        <div class="card--heading pb-2">
+          {{ card.heading }}
+        </div>
+        {% endif %}
+        {% if card.content %}
+        <div class="card--text">
+          {{ card.content }}
+        </div>
+        {% endif %}
       </div>
       {% endif %}
-      {% if module.description %}
-      <div class="card--text">
-        {{ module.description }}
-      </div>
-      {% endif %}
-    </div>
-  {% endif %}
-</section>
+    </section>
+  {% endfor %}
+</div>
 
 {# /Pricing card #}
